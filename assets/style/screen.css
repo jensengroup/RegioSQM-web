@@ -1,0 +1,1038 @@
+
+/* reset *****************************************************/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+/* fonts ************************************************************/
+
+/* using link in head */
+
+/* default **********************************************************/
+
+html {
+    height: 100%;
+}
+body {
+
+    margin: 0;
+    padding: 0;
+    cursor: default;
+
+    overflow-x: hidden;
+
+    background: #fff;
+
+    color: #222;
+
+    font: 16px/30px sans-serif;
+    font-family: 'Roboto', serif;
+    /* font-family: Roboto, "Helvetica Neue", "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Open Sans", sans-serif; */
+
+    font-weight: 400;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+
+    height: 100%;
+
+}
+
+.hidden,
+.print {display:none;}
+.clean {clear:both;display:block;}
+
+
+::-moz-focus-inner {border: 0;}
+input[type=submit]:focus {outline: 0;}
+::-webkit-input-placeholder,
+:-moz-placeholder {color:#999;}
+::selection,
+::-moz-selection {color:white;background:black;}
+
+a {
+    text-decoration:none;
+    color: inherit;
+}
+a:hover {
+    color: #0373BB;
+}
+
+.body-content a {
+    display: inline-block;
+    border-bottom: 1px solid #0373BB;
+}
+
+hr {
+    border-width:1px 0 0 0;
+    border-style:solid;
+    border-color:#b1b1b1;
+}
+
+option {
+    padding:5px;
+}
+
+strong {font-weight:bold;}
+em {font-style:italic;}
+
+address {}
+
+/* Reset some styles */
+::-webkit-input-placeholder,
+:-moz-placeholder {
+    color:#999;
+}
+
+::-moz-selection {
+    color:white;
+    background:#333;
+    text-shadow:none;
+}
+::selection {
+    color:white;
+    background:#333;
+    text-shadow:none;
+}
+
+
+::-moz-focus-inner {
+    border: 0;
+}
+input[type=submit]:focus {
+    outline: 0;
+}
+
+
+/* Standard Classes */
+.clean {clear:both;}
+.center {text-align:center;}
+
+
+/* webui ***********************************************************/
+
+
+/* Help Buttons */
+.frmBtn {
+    display:inline-block;
+    margin:0 0 0 0;
+    padding:1px 2px 0 2px;
+    background:#f6f6f6;
+    background-image: -webkit-gradient(
+        linear,
+        left top,
+        right bottom,
+        color-stop(0, rgb(251,251,251)),
+        color-stop(0.15, rgb(250,250,250)),
+        color-stop(0.98, rgb(221,221,221))
+    );
+    background-image: -moz-linear-gradient(
+        left top,
+        rgb(251,251,251) 0%,
+        rgb(250,250,250) 15%,
+        rgb(221,221,221) 98%
+    );
+    -moz-box-shadow:inset -1px -1px 0px #fff;
+    -webkit-box-shadow:inset -1px -1px 0px #fff;
+    box-shadow:inset -1px -1px 0px #fff;
+    border-width:1px 2px 2px 1px;
+    border-style:solid;
+    border-color:#c5c5c5 #949494 #949494 #c5c5c5;
+    -moz-border-radius:2px 2px 2px 2px;
+    -webkit-border-radius:5px 5px 5px 5px;
+    border-radius:5px 5px 5px 5px;
+    font:10px tahoma, sans-serif;
+    font-weight:bold;
+    color:#555;
+    text-shadow:1px 1px 0px rgba(255,255,255,1);
+    text-decoration:none;
+}
+
+
+
+/* Form */
+input[type=text] {
+    border-width:1px;
+    border-style:solid;
+    border-color:#bbb #aaa #aaa #bbb;
+    border-radius:2px;
+    /* box-shadow: */
+    /*     inset 0px 1px 3px rgba(0,0,0,0.1), */
+    /*     1px 1px 1px rgba(0,0,0,0.1); */
+
+    padding:8px 6px;
+    background-repeat:no-repeat;
+    background-position:95% 50%;
+
+    width:200px;
+
+    font:inherit;
+
+}
+input[type=text]:focus {
+    border-color:#0373BB;
+}
+
+input:focus {
+    outline-width: 0;
+}
+
+/* Form Search Elements */
+input[type=text].loading {
+    background-image:url('../images/loading.gif');
+}
+input[type=text].success {
+    background-image:url('../images/pixelated-dark/check.gif');
+}
+input[type=text].fail {
+    background-image:url('../images/pixelated-dark/x.gif');
+}
+
+
+
+
+
+
+
+
+
+/* Prompt Box */
+.ajaxarea {
+    z-index:2000;
+    position:relative;
+}
+.prompt-container {
+    background:#000;
+    background:rgba(0,0,0,0.5);
+    background:rgba(255,255,255,0.8);
+    background:rgba(35, 65, 119, 0.94);
+    display: block;
+    height: 500%;
+    left: 0;
+    position: fixed;
+    z-index: 2001;
+    top: 0;
+    width: 100%;
+}
+.prompt-box {
+    width:400px;
+    background:white;
+    background: linear-gradient(#fff, #f5f5f5);
+    background:#fafafa;
+
+    /* NOTE: Margin is set by JS */
+    margin:0 auto 0 auto;
+    box-shadow:
+        0 0 1px rgba(0,0,0,0.25);
+        /* 0 1px 5px 2px rgba(0,0,0,0.05), */
+        /* 0 5px 4px -3px rgba(0,0,0,0.15); */
+}
+.prompt-box .prompt-header {
+    border-width:0 0 1px 0;
+    border-color:#ddd;
+    border-style:solid;
+    box-shadow:0 1px 0px #fff;
+
+    font-family: "Fira Sans", sans-serif;
+}
+.prompt-box .prompt-header strong {
+    display:block;
+    padding:10px 20px;
+    font-weight: 400;
+}
+.prompt-box .prompt-message {
+    padding:20px 20px;
+}
+
+.prompt-box .prompt-respond {
+    padding:10px 20px;
+
+    border-width:1px 0 0 0;
+    border-color:#fff;
+    border-style:solid;
+    box-shadow:0 -1px 0px #ddd;
+}
+.prompt-box .prompt-respond ul {
+    min-height:20px;
+    float:right;
+}
+.prompt-box .prompt-respond ul li {
+    float:left;padding:0 0 0 10px;
+}
+.prompt-box .prompt-respond ul li a {
+}
+
+
+/* Prompt Box Content */
+.prompt-box .prompt-message ul {
+    margin:10px 20px 10px 20px;
+    list-style:square;
+}
+.prompt-box ul li {
+    line-height:20px;
+    margin:0 0 0 0;
+}
+
+.prompt-box .prompt-message p {
+    margin-bottom:0;
+}
+
+/* Prompt Box Form */
+.prompt-box .form  {}
+.prompt-box .form input[type=text] {
+    width:348px;
+}
+
+
+
+@media only screen and (max-width: 767px) {
+
+    .prompt-container { 
+        
+    }
+
+    .prompt-box {
+        margin-top:0 !important;
+        width: 100%;
+        height: 100%;
+
+    }
+
+    .prompt-box .form input[type=text] {
+        width: 99%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Loading bar */
+.loading_bar {
+    border-width:1px;
+    border-style:solid;
+    border-color:#ddd;
+    border-radius:2px;
+    background:rgba(0,0,0,0.02);
+    /* box-shadow: 1px 1px 1px rgba(0,0,0,0.3); */
+    position:relative;
+    width:100%;
+    height:30px;
+    /* padding:1px 1px 2px 1px; */
+    margin:0px 0 0px 0;
+}
+.loading_bar .bar {
+    height:31px;
+    WIDTH:0%;
+    background:url('../images/loading_background.gif') 0 0 repeat;
+    opacity:0.7;
+}
+
+.loading_bar .high {
+    position:absolute;
+    top:-28px;
+    LEFT:0%;
+
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.loading_bar .high .highHlp {
+    text-align:center;
+    display:block;
+    background:black;
+    width:36px;
+    height:20px;
+    line-height: 20px;
+    margin:0 0 0 -18px;
+}
+.loading_bar .high .highHlp:after {
+    display:block;
+    color:black;
+    font-size:0;
+    overflow:hidden;
+    content:".";
+
+    width:7px;
+    height:7px;
+
+    background:black;
+
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    -ms-transform:rotate(45deg);
+    -o-transform:rotate(45deg);
+
+    margin:0 auto;
+    position:relative;
+    bottom:4px;
+}
+
+.loading_bar .high .highHlp .nom {color:white;z-index:10;position:relative;}
+
+
+
+
+/* Elements */
+.explain {
+    display:inline-block;
+    cursor:help;
+}
+.explain .hvrHlp {
+    width:250px;
+    bottom:8px;
+    left:-127px;
+}
+
+
+
+
+
+
+/* Button */
+.button {
+    display:inline-block;
+    padding:5px 6px;
+
+    cursor:pointer;
+
+    border-width:1px;
+    border-style:solid;
+    border-color:#fff;
+
+    border-radius: 3px;
+
+    background:
+        rgba(255,255,255,0.75);
+
+    box-shadow:
+        0 0 1px rgba(0, 0, 0, 0.2),
+        0px 1px 0px rgba(0,0,0,0.2);
+
+    line-height:inherit;
+
+    user-select: none;
+}
+
+
+.button:hover {
+    /* background:rgba(255,255,255,1.0); */
+}
+.button:focus,
+.button.focus {
+    box-shadow:inset 1px 1px 4px rgba(0,0,0,0.1);
+    background:rgba(0,0,0,0.01);
+    cursor:default;
+}
+.button:active {
+    box-shadow:inset 1px 1px 4px rgba(0,0,0,0.1);
+    background:rgba(0,0,0,0.01);
+}
+.button.active {
+    box-shadow:inset 1px 1px 4px rgba(0,0,0,0.1);
+    background:rgba(0,0,0,0.01);
+    color:#222;
+    cursor:default;
+
+    background: rgba(35,110,158,0.9);
+    color: #fff;
+}
+.button.inactive {
+    color:#aaa;
+    cursor:default;
+}
+.button.inactive:active,
+.button.inactive:focus {
+    background:
+        rgba(255,255,255,0.75);
+    box-shadow:
+        0 0 1px rgba(0,0,0,0.2),
+        1px 1px 3px rgba(0,0,0,0.3);
+}
+
+
+
+
+/* hvrHelp */
+*:hover > .hvrHlpCnt {
+    visibility:visible;
+    opacity:1;
+    transition-delay:0s;
+}
+.hvrHlpCnt:hover {
+    visibility:hidden;
+    opacity:0;
+    cursor:default;
+}
+.hvrHlpCnt {
+    display:block;
+    position:relative;
+    top:0;
+    left:0;
+
+    -webkit-transition: visibility 0.1s linear 0s,opacity 0.1s ease-in-out;
+    -moz-transition: visibility 0.1s linear 0s,opacity 0.1s ease-in-out;
+    -o-transition: visibility 0.1s linear 0s,opacity 0.1s ease-in-out;
+    transition: visibility 0.1s linear 0s,opacity 0.1s ease-in-out;
+
+
+    visibility:hidden;
+    opacity:0;
+
+    /*
+    visibility:visible;
+    opacity:1;
+    background:red;
+    /* */
+
+    width:10px;
+    margin:0 auto;
+
+}
+.hvrHlp {
+    display:block;
+
+    /* BLACK (DEFAULT) */
+    background:#000;
+    color:#fff;
+
+    width:120px;
+    /**/font-size:90%; /*MORE READABLE PLEASE*/
+    line-height:140%;
+    padding:8px 8px 0px 8px;
+
+    position:absolute;
+    z-index:500;
+    bottom:14px;
+    left:-62px;
+
+    border-radius:1px;
+
+    box-shadow:1px 1px 2px rgba(0,0,0,0.5);
+    box-shadow:
+        1px 1px 0px #fff,
+        -1px -1px 0px #fff;
+    text-shadow:none;
+    text-align:left;
+
+}
+.hvrHlp:before {
+    display:none;
+    content:".";
+}
+.hvrHlp:after {
+    display:block;
+    color:black;
+    font-size:0;
+    overflow:hidden;
+    content:".";
+
+    width:10px;
+    height:10px;
+
+    /* BLACK */
+    background:black;
+
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    -o-transform:rotate(45deg);
+    -ms-transform:rotate(45deg);
+
+    margin:0 auto;
+    position:relative;
+    bottom:-5px;
+
+    box-shadow:1px 1px 2px rgba(0,0,0,0.5);
+    box-shadow:1px 1px 0px #fff;
+
+}
+
+
+/* Checkbox */
+/* Based on http://proto.io/freebies/onoff/ */
+.checkbox {
+    position: relative;
+    width:25px;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select: none;
+}
+.checkbox .checkbox-input {
+    display: none;
+}
+
+.checkbox .checkbox-label {
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+}
+.checkbox-inner:before,
+.checkbox-inner:after {
+    float: left; width: 100%; height: 25px; padding: 0; line-height: 25px;
+    font-size: 12px;
+    color: white;
+    font-family: Trebuchet, Arial, sans-serif;
+    font-weight: bold;
+
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+
+    text-align:center;
+    position:absolute;
+
+    border-width:1px;
+    border-style:solid;
+    border-color:#fff;
+
+    box-shadow:inset 1px 1px 4px rgba(0,0,0,0.1);
+}
+.checkbox-inner:before {
+    content: "\2713";
+    background-color: #0373BB;;
+    color: #FFFFFF;
+    font-size:15px;
+}
+.checkbox-inner:after {
+    content: "\2715";
+    background-color: #e0e0e0;
+    color: #666666;
+    font-size:15px;
+
+    text-shadow:1px 1px 0 rgba(255,255,255,0.5)
+}
+
+.checkbox-input:checked + .checkbox-label .checkbox-inner:after {
+    display:none;
+}
+
+
+/* On Off Switch */
+/* Based on http://proto.io/freebies/onoff/ */
+.onoffswitch {
+    position: relative; width: 80px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+    display: none;
+}
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 1px solid #bbb;
+    border-radius: 3px;
+}
+.onoffswitch-inner {
+    width: 200%; margin-left: -100%;
+    /* -moz-transition: margin 0.3s ease-in 0s; -webkit-transition: margin 0.3s ease-in 0s; */
+    /* -o-transition: margin 0.3s ease-in 0s; transition: margin 0.3s ease-in 0s; */
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    float: left; width: 50%; height: 20px; padding: 0; line-height: 20px;
+    font-size: 12px;
+    color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+
+    box-shadow:inset 1px 1px 4px rgba(0,0,0,0.1);
+}
+.onoffswitch-inner:before {
+    content: "ON";
+    padding-left: 7px;
+    background-color: #0373BB;
+    color: #FFFFFF;
+}
+.onoffswitch-inner:after {
+    content: "OFF";
+    padding-right: 7px;
+    background-color: #F8F8F8;
+    color: #666666;
+    text-align: right;
+    text-shadow:1px 1px 0 #fff;
+}
+
+.onoffswitch-switch {
+    width: 40px; margin: 0px;
+    background: #FFFFFF;
+    border: 1px solid #bbb;
+    border-radius: 2px;
+    position: absolute; top: 0; bottom: 0; right: 38px;
+    /* -moz-transition: all 0.3s ease-in 0s; -webkit-transition: all 0.3s ease-in 0s; */
+    /* -o-transition: all 0.3s ease-in 0s; transition: all 0.3s ease-in 0s;  */
+    background-image: -moz-linear-gradient(center top, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 100%);
+    background-image: -webkit-linear-gradient(center top, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 100%);
+    background-image: -o-linear-gradient(center top, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 100%);
+    background-image: linear-gradient(center top, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 100%);
+    background:white;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px;
+}
+
+
+.center .onoffswitch {
+    margin: 0 auto;
+    text-align:left;
+}
+
+
+
+
+
+/* article **********************************************************/
+
+article img {max-width:100%}
+
+table {
+    border-collapse: separate;
+    border-spacing: 2px;
+    width:100%;
+    margin:0 0 20px 0;
+}
+
+table tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+table tr td {
+    background:#fff;
+    background:rgba(255,255,255,.8);
+    background:rgba(240,240,240,.2);
+    padding:10px 10px;
+    line-height:20px;
+
+    vertical-align:top;
+
+    border-width:0 1px 1px 0;
+    border-style:solid;
+    border-color:#bbb;
+}
+
+table tr td p {margin:0;}
+table tr td img {float:none;display:inline;}
+table tr td.right {text-align:right;}
+table tr td.center {text-align:center;}
+
+article h1 {
+    font-family: "Fira Sans", "Helvetica Neue", sans-serif;
+    font-weight: 300;
+    font-size: 45px;
+    line-height: 50px;
+    text-align: center;
+    margin-bottom: 50px;
+
+}
+
+article h2 {
+
+    font-family: "Fira Sans", "Helvetica Neue", sans-serif;
+    font-weight: 300;
+    font-size: 25px;
+    text-align: center;
+    line-height: 35px;
+
+    margin-bottom: 50px;
+
+}
+
+/* layout ***********************************************************/
+
+.body-header-container,
+.body-content,
+.body-footer-container {
+    width: 900px;
+    margin: 0 auto;
+}
+
+
+header {
+
+    border-top: 5px solid #234177;
+    margin-bottom: 70px;
+}
+
+.body-header-container {
+    position: relative;
+}
+
+header .logo {
+    font-size: 25px;
+    font-family: "Fira Sans";
+    font-weight: 400;
+    line-height: 100px;
+    color: #234177;
+
+    padding: 0 0 0 20px;
+}
+header .logo .sq {
+    /* font-weight: 500; */
+}
+header .logo a {
+}
+header .logo a:hover {
+    color: inherit;
+}
+
+header nav {
+    display: block;
+    position: absolute;
+    right: 40px;
+    top: 5px;
+}
+header nav ul {}
+header nav ul li {
+    float: left;
+    line-height: 100px;
+    margin: 0 0 0 30px;
+}
+header nav ul li a {
+    color: #555;
+    letter-spacing: 1px;
+}
+header nav ul li.active a,
+header nav ul li a:hover {
+}
+
+article {
+
+
+}
+article .container {
+}
+
+footer {
+
+    border-width: 1px 0 0 0;
+    border-style: solid;
+    background: #234177;
+    color: #fff;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+}
+footer a {font-weight: bold;}
+footer .body-footer-container {
+    margin: 0 auto;
+    width: 1000px;
+
+    height: 60px;
+    line-height: 60px;
+    font-size: 14px;
+
+    text-align: center;
+}
+
+
+
+/* page specific *****************************************************/
+
+.frontpage {}
+.frontpage .frontpage-hello {
+    text-align: center;
+    padding: 0 40px 50px 40px;
+}
+.frontpage .frontpage-hello h1 {
+    font-family: "Fira Sans", "Helvetica Neue", sans-serif;
+    font-weight: 300;
+    font-size: 45px;
+    line-height: 50px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.frontpage .frontpage-hello img {
+    max-width: 100%;
+    margin-bottom: 40px;
+    width: 500px;
+}
+.frontpage .frontpage-hello h2 {
+    font-family: "Fira Sans", "Helvetica Neue", sans-serif;
+    font-weight: 300;
+    font-size: 25px;
+    text-align: center;
+    line-height: 35px;
+}
+.frontpage .frontpage-submit {
+    text-align: center;
+
+    position: relative;
+}
+.frontpage .frontpage-submit p {
+    margin: 0 0 40px 0;
+}
+.frontpage .frontpage-submit input[type=text]{
+    width: 350px;
+}
+.frontpage .frontpage-submit input[type=submit]{
+    background: #4ba1ca;
+    border-color: #397da9;
+    color: #fff;
+    line-height: 35px;
+    font-size: 17px;
+
+}
+
+
+/* elements **********************************************************/
+
+.border-menu {
+    display: none;
+    z-index: 200;
+    width: 35px;
+    height: 20px;
+
+    cursor: pointer;
+}
+
+.border-menu:after,
+.border-menu:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    transition: transform 0.3s,
+                top 0.3s,
+                left 0.3s;
+}
+
+.border-menu:after {
+    top: 0;
+    border-top: 4px solid #000;
+}
+
+.border-menu:before {
+    bottom: 0;
+    height: 4px;
+    border-top: 4px solid #000;
+    border-bottom: 4px solid #000;
+}
+
+.active.border-menu:before,
+.active .border-menu:before {
+    bottom:4px;
+    border-bottom: 0;
+    border-top: 4px solid #000;
+    transform: rotate(-45deg);
+}
+
+.active.border-menu:after,
+.active .border-menu:after {
+    top: 8px;
+    border-top: 4px solid #000;
+    transform: rotate(45deg);
+}
+
+
+
+
+/* tablet ***********************************************************/
+
+@media only screen and (max-width: 991px) {
+
+    /* Stops Mobile Safari from auto-adjusting font-sizes */
+    body,
+    select,
+    input,
+    textarea {
+        -webkit-text-size-adjust: none;
+        -webkit-text-size-adjust: 100%;
+    }
+
+
+    article,
+    footer,
+    header {
+        padding: 0 20px;
+    }
+
+    .body-content,
+    footer .body-footer-container,
+    header .body-header-container {
+        width: 100%;
+    }
+
+}
+
+
+/* mobile horizontal ************************************************/
+
+/* @media only screen and (min-width: 480px) and (max-width: 767px) { */
+@media only screen and (max-width: 767px) {
+
+    /* Stops Mobile Safari from auto-adjusting font-sizes */
+    body,
+    select,
+    input,
+    textarea {
+        -webkit-text-size-adjust: none;
+        -webkit-text-size-adjust: 100%;
+    }
+
+
+
+    /* */
+
+}
+
+
+
+
