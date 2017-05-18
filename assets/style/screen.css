@@ -58,15 +58,15 @@ table {
 /* default **********************************************************/
 
 html {
-    height: 100%;
+    height:100%;
+    position: relative;
+    overflow: auto;
 }
 body {
-
+    position: relative;
+    min-height: 100%;
     margin: 0;
-    padding: 0;
     cursor: default;
-
-    overflow-x: hidden;
 
     background: #fff;
 
@@ -80,7 +80,6 @@ body {
     font-style: normal;
     -webkit-font-smoothing: antialiased;
 
-    height: 100%;
 
 }
 
@@ -107,6 +106,7 @@ a:hover {
 .body-content a {
     display: inline-block;
     border-bottom: 1px solid #0373BB;
+
 }
 
 hr {
@@ -794,6 +794,10 @@ article h2 {
 
 /* layout ***********************************************************/
 
+.body-content {
+    padding: 0 0 120px 0;
+}
+
 .body-header-container,
 .body-content,
 .body-footer-container {
@@ -889,7 +893,7 @@ footer .body-footer-container {
 .frontpage {}
 .frontpage .frontpage-hello {
     text-align: center;
-    padding: 0 40px 50px 40px;
+    padding: 0 40px 20px 40px;
 }
 .frontpage .frontpage-hello h1 {
     font-family: "Fira Sans", "Helvetica Neue", sans-serif;
@@ -917,18 +921,45 @@ footer .body-footer-container {
     position: relative;
 }
 .frontpage .frontpage-submit p {
-    margin: 0 0 40px 0;
+    margin: 0 0 50px 0;
 }
 .frontpage .frontpage-submit input[type=text]{
     width: 350px;
+    text-align: center;
+
+    /* */
+    background: #f6f6f8;
+    border:0;
+    border-radius:0;
+    border-bottom: 2px solid #234177;
+
+    font-family: "Fira Mono", mono;
+
 }
 .frontpage .frontpage-submit input[type=submit]{
-    background: #4ba1ca;
-    border-color: #397da9;
-    color: #fff;
+    /* background: #4ba1ca; */
+    /* border-color: #397da9; */
+    background: #fff;
+    border:0;
+    border-radius: 2px;
+
+    padding: 0 10px;
+
+    color: #333;
+    font-weight: 500;
     line-height: 35px;
     font-size: 17px;
 
+    font-family: "Fira Sans", sans-serif;
+
+    cursor: pointer;
+
+    line-height: 46px;
+
+}
+.frontpage .frontpage-submit input[type=submit]:hover {
+    background: #234177;
+    color: #fff;
 }
 
 
@@ -999,10 +1030,10 @@ footer .body-footer-container {
 
 
     article,
-    footer,
     header {
         padding: 0 20px;
     }
+    footer {}
 
     .body-content,
     footer .body-footer-container,

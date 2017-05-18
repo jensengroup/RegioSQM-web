@@ -35,19 +35,30 @@ $(function()
         })
         .done(function( msg ) {
 
-            console.log(msg);
-
             if(msg.length == 32) {
                 window.location.href += "results/"+msg;
             }
             else {
-                console.log( "Data Saved: " + msg );
+                var promptBox = new $.Prompt();
+                promptBox.setTitle('Error');
+                promptBox.setMessage('<p>'+msg+'</p>');
+                promptBox.addCancelBtn("Okay");
+                promptBox.show();
+
+                loadPrompt.cancel();
             }
 
         })
         .fail(function (msg) {
-            console.log("Connection problem");
-            console.log(msg)
+            // console.log("Connection problem");
+            // console.log(msg)
+            var promptBox = new $.Prompt();
+            promptBox.setTitle('Connection problem');
+            promptBox.setMessage('<p>'+msg+'</p>');
+            promptBox.addCancelBtn("Okay");
+            promptBox.show();
+
+            loadPrompt.cancel();
         });
 
 

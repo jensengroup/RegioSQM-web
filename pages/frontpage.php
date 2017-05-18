@@ -15,14 +15,14 @@
             <section class="frontpage-submit">
                 <p class="">
                     <form class="frontpage-sample">
-                        <input placeholder="fx. n1ccc[nH]1 for Pyrazole" type="text" value="n1ccc[nH]1"  />
-                        <input type="submit" class="button" value="Predict" />
+                        <input placeholder="SMILES string" type="text" />  <!-- value="n1ccc[nH]1"  /> -->
+                        <input type="submit" class="" value="Predict" />
                     </form>
                 </p>
 
                 <p class="">
-                    Are you skeptical? Try it out by pasting a <a href="#chemdraw">SMILE code from ChemDraw</a><br />
-                    and submit to get the regioselective prediction.
+                    Try it out by pasting a <a href="<?php echo BASEURL ?>/usage">SMILES code from ChemDraw</a><br />
+                    and submit to get the regioselective prediction. Fx. n1ccc[nH]1 for Pyrazole
                 </p>
 
             </section>

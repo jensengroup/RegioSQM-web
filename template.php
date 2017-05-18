@@ -17,6 +17,7 @@
     <!-- style -->
     <script src="https://use.fontawesome.com/1cb9f568c6.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto|Fira+Sans:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Mono" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo BASEURL ?>/assets/style/screen.css" />
 
     <!-- google analytics -->
