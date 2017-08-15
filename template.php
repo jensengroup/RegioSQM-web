@@ -56,7 +56,8 @@
     <footer class="body-footer">
 
         <div class="body-footer-container">
-            Have feedback? Tweet at <a href="https://twitter.com/janhjensen">@jhjensen</a>
+            Have feedback? Tweet at <a href="https://twitter.com/janhjensen">@jhjensen</a>.
+            This server uses a modified version of MOPAC7 generously provided by Andreas Klamt, <a href="http://www.cosmologic.de">COSMOLogic</a>.
         </div>
     </footer>
 

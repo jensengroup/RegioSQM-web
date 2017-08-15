@@ -48,7 +48,7 @@ chdir('data/'.$hash);
 
 file_put_contents('example.smiles', 'comp1  '.$smiles);
 
-shell_exec(PEXE.' '.RPATH.'/RegioSQM1.py example.smiles > example.csv');
+// shell_exec(PEXE.' '.RPATH.'/RegioSQM1.py example.smiles > example.csv');
 
 print $hash;
 exit();

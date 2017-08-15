@@ -24,9 +24,10 @@ $submitted = file_exists('example.csv');
 $queued = file_exists('example.slurm');
 $calculated = file_exists('example.svg');
 
+
 if(!$submitted)
 {
-    shell_exec(PEXE.' '.RPATH.'/RegioSQM1.py example.smiles > example.csv');
+    shell_exec(str_replace("{HASH}", $hash, EXE_REGIOSQM1).' > example.csv');
 
 }else{
 
@@ -41,7 +42,7 @@ if(!$submitted)
 
 if(!$queued && !$error)
 {
-    $squeue = shell_exec('ssh -i /home/yensen/.ssh/id_rsa yensen@sunray "squeue | grep yensen"');
+    $squeue = shell_exec(EXE_STATUS);
 
     if($squeue != "")
     {
@@ -51,10 +52,7 @@ if(!$queued && !$error)
     }
     else
     {
-        shell_exec('ssh -i /home/yensen/.ssh/id_rsa yensen@sunray "mkdir data/'.$hash.'" > example.log');
-        shell_exec('scp -i /home/yensen/.ssh/id_rsa *sdf *smiles *csv *mop yensen@sunray:data/'.$hash.' 2>> example.log >> example.log');
-        $slurm_id = shell_exec('ssh -i /home/yensen/.ssh/id_rsa yensen@sunray "~/bin/submit_regiosqm '.$hash.'" 2>> example.log');
-
+        $slurm_id = shell_exec(str_replace("{HASH}", $hash, EXE_CALCULATE));
         file_put_contents('example.slurm', $slurm_id);
     }
 }
@@ -64,19 +62,14 @@ if(!$calculated && !$error)
     // Check if calculation is finished
     $slurm_id = file_get_contents('example.slurm');
 
-    // squeue -u yensen | grep 734327
-    $squeue = shell_exec('ssh -i /home/yensen/.ssh/id_rsa yensen@sunray "squeue | grep '.$slurm_id.' "');
+    // Status
+    $squeue = shell_exec(EXE_STATUS." | grep ".$slurm_id);
 
     if($squeue == "")
     {
-        // shell_exec('scp -i /home/yensen/.ssh/id_rsa yensen@sunray:data/'.$hash.'/batch_mop_out.tar.gz . 2>> example.log >> example.log');
-        // shell_exec('tar -xzvf batch_mop_out.tar.gz >> example.log 2>> example.log');
 
-        # Analyse results
-        // shell_exec(PEXE.' '.RPATH.'/RegioSQM2.py example.smiles example.csv 2>> example.log >> example.log');
-
-        shell_exec('ssh -i /home/yensen/.ssh/id_rsa yensen@sunray "~/bin/analyse_regiosqm '.$hash.'" 2>> example.log');
-        shell_exec('scp -i /home/yensen/.ssh/id_rsa yensen@sunray:data/'.$hash.'/example.svg . 2>> example.log >> example.log');
+        shell_exec(str_replace("{HASH}", $hash, EXE_REGIOSQM2)." >> example.log ");
+        shell_exec(str_replace("{HASH}", $hash, EXE_REGIOSQM2_COLLECT)." >> example.log ");
 
         $calculated = True;
     }
