@@ -11,12 +11,14 @@ $smiles = str_replace("comp1 ", "", $smiles);
 $error = False;
 
 ?>
+<div class="long-text">
     <p class="center">
         <a href="<?php echo $this_page ?>"><?php echo $this_page ?></a>
         <br />
         <br />
         <br />
     </p>
+</div>
 
 <?php
 // Check Status
@@ -25,9 +27,9 @@ $queued = file_exists('example.slurm');
 $calculated = file_exists('example.svg');
 
 
-if(!$submitted)
-{
-    shell_exec(str_replace("{HASH}", $hash, EXE_REGIOSQM1).' > example.csv');
+if(!$submitted){
+
+    shell_exec(str_replace("{HASH}", $hash, EXE_SETUP).' > example.csv');
 
 }else{
 
@@ -68,8 +70,8 @@ if(!$calculated && !$error)
     if($squeue == "")
     {
 
-        shell_exec(str_replace("{HASH}", $hash, EXE_REGIOSQM2)." >> example.log ");
-        shell_exec(str_replace("{HASH}", $hash, EXE_REGIOSQM2_COLLECT)." >> example.log ");
+        shell_exec(str_replace("{HASH}", $hash, EXE_ANALYSE)." >> example.log ");
+        shell_exec(str_replace("{HASH}", $hash, EXE_ANALYSE_COLLECT)." >> example.log ");
 
         $calculated = True;
     }
@@ -86,7 +88,9 @@ if(!$calculated && !$error)
 ?>
 
 
-<h2><?php echo $smiles ?></h2>
+<div class="long-text">
+    <h2><?php echo $smiles ?></h2>
+</div>
 
 <?php if($calculated && !$error):
 

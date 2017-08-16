@@ -1,9 +1,8 @@
 $(function()
 {
 
-
-    var frtPdctBtn = $('.frontpage .frontpage-sample');
-    var frtInpSmiles = $('.frontpage .frontpage-sample input[type=text]')
+    var frtPdctBtn = $('.frontpage .frontpage-form');
+    var frtInpSmiles = $('.frontpage .frontpage-form input[type=text]')
 
     frtPdctBtn.submit(function () {
 

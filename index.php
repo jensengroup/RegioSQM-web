@@ -34,12 +34,12 @@ define('AJAX', isset($_POST['ajax']));
 // Load config
 $ini = parse_ini_file("settings.ini");
 
-define('PEXE', $ini['pythonenv']);
-define('EXE_REGIOSQM1', $ini['regiosqm1']);
-define('EXE_REGIOSQM2', $ini['regiosqm2']);
-define('EXE_REGIOSQM2_COLLECT', $ini['regiosqm2_collect']);
-define('EXE_STATUS', $ini['status']);
+define('EXE_VALIDATE', $ini['validate']);
+define('EXE_SETUP', $ini['setup']);
 define('EXE_CALCULATE', $ini['calculate']);
+define('EXE_ANALYSE', $ini['analyse']);
+define('EXE_ANALYSE_COLLECT', $ini['analyse_collect']);
+define('EXE_STATUS', $ini['status']);
 
 // Parse the request
 if(isset($_GET['request']))

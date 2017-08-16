@@ -796,6 +796,8 @@ article h2 {
 
 .body-content {
     padding: 0 0 120px 0;
+
+    overflow-x:hidden;
 }
 
 .body-header-container,
@@ -808,8 +810,10 @@ article h2 {
 
 header {
 
-    border-top: 5px solid #234177;
+    /* border-bottom: 2px solid #234177; */
     margin-bottom: 70px;
+
+
 }
 
 .body-header-container {
@@ -817,10 +821,11 @@ header {
 }
 
 header .logo {
-    font-size: 25px;
+    font-size: 35px;
     font-family: "Fira Sans";
     font-weight: 400;
     line-height: 100px;
+    letter-spacing: 1px;
     color: #234177;
 
     padding: 0 0 0 20px;
@@ -879,7 +884,6 @@ footer .body-footer-container {
     margin: 0 auto;
     width: 1000px;
 
-    height: 60px;
     line-height: 60px;
     font-size: 14px;
 
@@ -890,7 +894,9 @@ footer .body-footer-container {
 
 /* page specific *****************************************************/
 
-.frontpage {}
+.frontpage {
+
+}
 .frontpage .frontpage-hello {
     text-align: center;
     padding: 0 40px 20px 40px;
@@ -919,21 +925,47 @@ footer .body-footer-container {
     text-align: center;
 
     position: relative;
+    padding:0 20px;
 }
 .frontpage .frontpage-submit p {
     margin: 0 0 50px 0;
 }
+.frontpage .frontpage-submit p.frontpage-form-p {
+}
+
+.frontpage .frontpage-submit form {
+
+    background: red;
+    width: 100%;
+    line-height: 50px;
+    /* text-align: center; */
+
+
+    border: 3px solid #234177;
+    border-radius: 3px;
+    background: #fff;
+
+
+    padding: 10px 0;
+
+    position: relative;
+
+}
+
+.frontpage .frontpage-form-input {
+    padding: 0 180px 0 20px;
+}
+
 .frontpage .frontpage-submit input[type=text]{
-    width: 350px;
-    text-align: center;
-
-    /* */
-    background: #f6f6f8;
     border:0;
-    border-radius:0;
-    border-bottom: 2px solid #234177;
+    text-align:left;
 
-    font-family: "Fira Mono", mono;
+    padding:0;
+    width:100%;
+
+    /* font-family: "Fira Mono", mono; */
+    font-family: 'Roboto Mono', mono;
+
 
 }
 .frontpage .frontpage-submit input[type=submit]{
@@ -947,19 +979,24 @@ footer .body-footer-container {
 
     color: #333;
     font-weight: 500;
-    line-height: 35px;
     font-size: 17px;
 
     font-family: "Fira Sans", sans-serif;
 
     cursor: pointer;
 
-    line-height: 46px;
+    line-height: 50px;
+
+    position: absolute;
+    right: 10px;
+    top: 10px;
+
+    background: #234177;
+    color: #fff;
 
 }
 .frontpage .frontpage-submit input[type=submit]:hover {
-    background: #234177;
-    color: #fff;
+    background: #2d4f8c;
 }
 
 
@@ -1013,6 +1050,15 @@ footer .body-footer-container {
 }
 
 
+.long-text {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.video-wrapper {width:80%; max-width: 600px; height:100%; margin:0 auto; background:#CCC}
+.video-frame {position:relative; padding-top: 56%;}
+.video-frame iframe {position:absolute;top:0;left:0;width:100%; height:100%;}
 
 
 /* tablet ***********************************************************/

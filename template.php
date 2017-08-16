@@ -17,7 +17,8 @@
     <!-- style -->
     <script src="https://use.fontawesome.com/1cb9f568c6.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto|Fira+Sans:300,400,500" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Fira+Mono" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Fira+Mono" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo BASEURL ?>/assets/style/screen.css" />
 
     <!-- google analytics -->
@@ -57,7 +58,6 @@
 
         <div class="body-footer-container">
             Have feedback? Tweet at <a href="https://twitter.com/janhjensen">@jhjensen</a>.
-            This server uses a modified version of MOPAC7 generously provided by Andreas Klamt, <a href="http://www.cosmologic.de">COSMOLogic</a>.
         </div>
     </footer>
 

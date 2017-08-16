@@ -6,18 +6,13 @@ if(!isset($_POST['smiles']))
     exit();
 }
 
-if("" == trim($_POST['smiles'])){
-    $smiles = '';
+$smiles = $_POST['smiles'];
+$smiles = trim($smiles);
 
+if($smiles == ""){
     print "No SMILES code given.";
     exit();
 }
-else
-{
-    $smiles = $_POST['smiles'];
-}
-
-$smiles = trim($smiles);
 
 if ( strpos($smiles, '.') !== False )
 {
@@ -26,15 +21,8 @@ if ( strpos($smiles, '.') !== False )
 }
 
 // $smiles = escapeshellcmd($smiles);
-$safesmiles = escapeshellarg($smiles);
+// $smiles = escapeshellarg($smiles);
 
-# Check for validation of SMILES
-$valid = shell_exec(PEXE.' py/validate.py '.$safesmiles);
-if($valid != 1)
-{
-    print "Could not genereate molecule. Is the SMILES input correct?";
-    exit();
-}
 
 $hash = md5($smiles);
 if(is_dir('data/'.$hash))
@@ -47,6 +35,18 @@ mkdir('data/'.$hash);
 chdir('data/'.$hash);
 
 file_put_contents('example.smiles', 'comp1  '.$smiles);
+
+
+// Check for validation of SMILES
+// will return 1 if valid
+$valid = shell_exec(str_replace("{HASH}", $hash, EXE_VALIDATE));
+if($valid != 1)
+{
+    print "Could not genereate molecule. Is the SMILES input correct?";
+    array_map('unlink', glob("$hash/*.*"));
+    rmdir($hash);
+    exit();
+}
 
 // shell_exec(PEXE.' '.RPATH.'/RegioSQM1.py example.smiles > example.csv');
 

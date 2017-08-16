@@ -10,7 +10,13 @@
     <p class="center">
     <br />
     <br />
-    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/A_gwCZrYIXY?rel=0&amp;showinfo=0?ecver=1" frameborder="0" allowfullscreen></iframe>
     </p>
+
+    <div class="video-wrapper">
+        <div class="video-frame">
+            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/A_gwCZrYIXY?rel=0&amp;showinfo=0?ecver=1" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
 
 </article>
