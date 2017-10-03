@@ -7,7 +7,7 @@
     <h2>How does RegioSQM work?</h2>
     <p>RegioSQM finds the aromatic CH group with the highest proton affinity
     estimated by the PM3/COSMO method using the <a href="http://openmopac.net/">MOPAC</a> program.
-    A manuscript describing the method is in preparation.</p>
+    A manuscript describing the method <a href="https://doi.org/10.26434/chemrxiv.5435935.v1">has been submitted.</a></p>
 
     <br />
     <br />
