@@ -40,6 +40,34 @@ define('EXE_CALCULATE', $ini['calculate']);
 define('EXE_ANALYSE', $ini['analyse']);
 define('EXE_ANALYSE_COLLECT', $ini['analyse_collect']);
 define('EXE_STATUS', $ini['status']);
+define('EXE_INFO', $ini['sinfo']);
+define('SET_MAX_CAL', $ini['max_running']);
+
+
+// Check status on cluster
+function cluster_status(){
+
+    $info = shell_exec(EXE_INFO);
+    $info = preg_split('/  +/', $info);
+
+
+
+    if(! (count($info) > 1))
+    {
+        return "busy";
+    }
+    else
+    {
+        return "avaliable";
+    }
+
+    // $free_nodes = (int) $info[3];
+    //
+    // print $free_nodes;
+
+    return $info;
+}
+
 
 // Parse the request
 if(isset($_GET['request']))

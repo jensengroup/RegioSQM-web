@@ -792,12 +792,19 @@ article h2 {
 
 }
 
+article p {
+
+    margin-bottom: 40px;
+
+}
+
 /* layout ***********************************************************/
 
 .body-content {
     padding: 0 0 120px 0;
 
     overflow-x:hidden;
+    /* background: #F7F9FA #ebf4fd; */ /* very light blue */
 }
 
 .body-header-container,
@@ -828,7 +835,7 @@ header .logo {
     letter-spacing: 1px;
     color: #234177;
 
-    padding: 0 0 0 20px;
+    padding: 0 0 0 0px;
 }
 header .logo .sq {
     /* font-weight: 500; */
@@ -839,10 +846,32 @@ header .logo a:hover {
     color: inherit;
 }
 
+.server_status {
+    /* position: absolute; */
+    /* left: 200px; */
+    /* top: 0; */
+    display: inline;
+    font-size: 20px;
+    color: red;
+
+    display:block;
+}
+
+.server_status.avaliable,
+.server_status.free {
+    color: #4daf4a;
+}
+.server_status.busy {
+    color: #e41a1c;
+}
+
+.server_status:hover {
+}
+
 header nav {
     display: block;
     position: absolute;
-    right: 40px;
+    right: 0px;
     top: 5px;
 }
 header nav ul {}
@@ -1087,6 +1116,8 @@ footer .body-footer-container {
         width: 100%;
     }
 
+
+
 }
 
 
@@ -1095,18 +1126,69 @@ footer .body-footer-container {
 /* @media only screen and (min-width: 480px) and (max-width: 767px) { */
 @media only screen and (max-width: 767px) {
 
-    /* Stops Mobile Safari from auto-adjusting font-sizes */
-    body,
-    select,
-    input,
-    textarea {
-        -webkit-text-size-adjust: none;
-        -webkit-text-size-adjust: 100%;
+
+    /* menu */
+    header .navigation {
+    }
+    header nav {display: none;}
+    header .active nav {display: block;}
+    header .border-menu {
+        display: block;
+        position: absolute;
+        top: 40px;
+        right: 0;
+    }
+
+    header .active .border-menu {
+        position: fixed;
+        right: 20px;
+    }
+
+    header .navigation nav {
+        background: white;
+        height: 110%;
+        width: 100%;
+
+        position: fixed;
+        z-index: 160;
+        left: 0;
+        top: 0;
+
+        font-size: 15px;
+        line-height: 60px;
+
+        overflow-y: auto;
+
+    }
+
+    header .navigation nav ul {
+        display: block;
+        margin: 80px 0 0 0;
+    }
+    header .navigation nav ul li {
+        display: block;
+        float: none;
+        font-size: inherit;
+        margin: 15px 15px 0 15px;
+    }
+    header .navigation nav ul li a {
+        color: #333;
+        display: block;
+        border:0;
+
+        background: #f7f7f7;
+        padding: 0 20px;
+
+        border-radius: 4px;
+
+        box-shadow:
+            0 0 1px rgba(0, 0, 0, 0.1),
+            0px 1px 0px rgba(0,0,0,0.1);
+
     }
 
 
 
-    /* */
 
 }
 

@@ -46,7 +46,7 @@ if(!$queued && !$error)
 {
     $squeue = shell_exec(EXE_STATUS);
 
-    if($squeue != "")
+    if(count($squeue) > SET_MAX_CAL)
     {
         echo "<h1>Queue is busy. Try again later</h1>";
         echo "<p class=\"center\">".$squeue."</p>";
@@ -78,9 +78,9 @@ if(!$calculated && !$error)
     else
     {
 ?>
-        <h1>Your calculation is in queue or running</h1>
+        <h1>Your calculation is running</h1>
         <h2><a href="<?php echo $this_page ?>">Refresh</a> this page in a few minutes.</h2>
-        <p class="center"><?php echo $squeue ?></p>
+        <!-- <p class="center"><?php echo $squeue ?></p> -->
 <?php
     }
 }

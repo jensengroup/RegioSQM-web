@@ -1,6 +1,29 @@
 $(function()
 {
 
+    // menu navigation
+    /* mobile menu */
+    $('header .navigation .border-menu').click(function () {
+
+        var $main_menu = $('header .navigation');
+
+        if($main_menu.hasClass('active'))
+        {
+            $main_menu.removeClass('active');
+            $('body').focus();
+        }
+        else
+        {
+            $main_menu.addClass('active');
+        }
+
+    });
+
+
+
+
+
+
     var frtPdctBtn = $('.frontpage .frontpage-form');
     var frtInpSmiles = $('.frontpage .frontpage-form input[type=text]')
 
@@ -103,5 +126,22 @@ $(function()
 
         return false;
     });
+
+
+    $input = $('.frontpage-form-input input');
+    function copy_to_input(smiles) {
+
+        $input.val(smiles);
+        $input.focus();
+
+    }
+
+    $test_btn = $('a.frontpage-tester');
+    $test_btn.click(function() {
+        copy_to_input("c1(c(ccc(c1)N)F)[C@]1(NC(N(S(=O)(=O)C1)C)NC(=O)OC(C)(C)C)C");
+        return false;
+    });
+
+    $input.focus();
 
 });

@@ -6,7 +6,6 @@
 
                 <h1>Predict Regioselectivity</h1>
 
-                <!-- <img src="assets/scheme0.png" /> -->
 
                 <h2>
                     of electrophilic aromatic substitution reactions<br />
@@ -28,21 +27,38 @@
                     </form>
                 </p>
 
-                <!-- <p class=""> -->
-                <!--     Try it out by pasting a <a href="<?php echo BASEURL ?>/usage">SMILES code from ChemDraw</a><br /> -->
-                <!--     and submit to get the regioselective prediction. Fx. n1ccc[nH]1 for Pyrazole -->
-                <!-- </p> -->
 
-                <p>
-                    For example <a href="results/50043fc02d53284026f8d51258292200">this</a> calculation.
-                </p>
 
             </section>
 
         </section>
 
+
+        <section class="body-content">
         <article>
+
+                <!-- <p> -->
+                <!--     RegioSQM allows for fast and accurate prediction of the -->
+                <!--     regioselectivity of electrophilic aromatic substitution reactions, based solely on a -->
+                <!--     SMILES input. -->
+                <!--     Fx. n1ccc[nH]1 for Pyrazole -->
+                <!-- </p> -->
+
+                <p class="center">
+                    Use by pasting a <a href="<?php echo BASEURL ?>/usage">SMILES code from ChemDraw</a>
+                    to get the regioselective prediction, for example using <a class="frontpage-tester">this</a> SMILES.<br />
+                    For citation and more information see <a href="https://doi.org/10.1039/C7SC04156J">the RegioSQM paper</a>.
+                </p>
+
+                <!-- <p> -->
+                <!-- <img src="assets/scheme.svg" /> -->
+                <!-- </p> -->
+
+                <!-- <p> -->
+                <!--     The RegioSQM is running <a href="http://openmopac.net/">MOPAC2016</a> for the webserver predictions. -->
+                <!-- </p> -->
 
 
 
         </article>
+        </section>
