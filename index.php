@@ -1,5 +1,9 @@
 <?php
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 $protocol = 'http';
 $servername = $_SERVER['SERVER_NAME'];
 $serverport = ($_SERVER['SERVER_PORT'] == '80') ? '' : ':' . $_SERVER['SERVER_PORT'];
@@ -43,14 +47,11 @@ define('EXE_STATUS', $ini['status']);
 define('EXE_INFO', $ini['sinfo']);
 define('SET_MAX_CAL', $ini['max_running']);
 
-
 // Check status on cluster
 function cluster_status(){
 
     $info = shell_exec(EXE_INFO);
     $info = preg_split('/  +/', $info);
-
-
 
     if(! (count($info) > 1))
     {
@@ -61,13 +62,8 @@ function cluster_status(){
         return "avaliable";
     }
 
-    // $free_nodes = (int) $info[3];
-    //
-    // print $free_nodes;
-
     return $info;
 }
-
 
 // Parse the request
 if(isset($_GET['request']))

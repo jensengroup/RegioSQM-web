@@ -42,10 +42,11 @@ file_put_contents('example.smiles', 'comp1  '.$smiles);
 $valid = shell_exec(str_replace("{HASH}", $hash, EXE_VALIDATE));
 if($valid != 1)
 {
+    // chdir("..");
     print "Could not genereate molecule. Is the SMILES input correct?";
-    array_map('unlink', glob("$hash/*.*"));
-    rmdir($hash);
-    exit();
+    // array_map('unlink', glob("$hash/*.*"));
+    // rmdir($hash);
+    // exit();
 }
 
 // shell_exec(PEXE.' '.RPATH.'/RegioSQM1.py example.smiles > example.csv');

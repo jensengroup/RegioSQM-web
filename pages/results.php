@@ -25,6 +25,7 @@ $error = False;
 $submitted = file_exists('example.csv');
 $queued = file_exists('example.slurm');
 $calculated = file_exists('example.svg');
+$mopac_done = file_exists('mopac_done');
 
 
 if(!$submitted){
@@ -42,9 +43,13 @@ if(!$submitted){
 
 }
 
+$squeue = shell_exec(EXE_STATUS);
+$squeue = explode("\n", $squeue);
+$squeue = array_map('trim', $squeue);
+$squeue = array_filter($squeue);
+
 if(!$queued && !$error)
 {
-    $squeue = shell_exec(EXE_STATUS);
 
     if(count($squeue) > SET_MAX_CAL)
     {
@@ -59,7 +64,7 @@ if(!$queued && !$error)
     }
 }
 
-if(!$calculated && !$error)
+if(!$mopac_done && !$error)
 {
     // Check if calculation is finished
     $slurm_id = file_get_contents('example.slurm');
@@ -69,11 +74,7 @@ if(!$calculated && !$error)
 
     if($squeue == "")
     {
-
-        shell_exec(str_replace("{HASH}", $hash, EXE_ANALYSE)." >> example.log ");
-        shell_exec(str_replace("{HASH}", $hash, EXE_ANALYSE_COLLECT)." >> example.log ");
-
-        $calculated = True;
+        print("Should not happen. Please report.");
     }
     else
     {
@@ -82,6 +83,16 @@ if(!$calculated && !$error)
         <h2><a href="<?php echo $this_page ?>">Refresh</a> this page in a few minutes.</h2>
         <!-- <p class="center"><?php echo $squeue ?></p> -->
 <?php
+    }
+}
+else
+{
+
+    if(!$calculated)
+    {
+        shell_exec(str_replace("{HASH}", $hash, EXE_ANALYSE)." >> example.log ");
+        shell_exec(str_replace("{HASH}", $hash, EXE_ANALYSE_COLLECT)." >> example.log ");
+        $calculated = True;
     }
 }
 
